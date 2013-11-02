@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE config SYSTEM "mung.dtd">
+<config ldelim="[" rdelim="]">
+ <global name="project.name" value="My Webserver" />
+ <global name="hostname" value="localhost" />
+ <global name="port.base" value="2" />
+ <global name="port" value="[port.base]000" />
+ <global name="db.server" value="[hostname]:[port]" />
+
+ <!-- D1 -->
+ <env name="d1">
+  <var name="port" value="5000" />
+ </env>
+
+ <env name="dev1server1" inherit="d1">
+  <var name="hostname" value="dev1serv1" />
+  <var name="port" value="5001" />
+ </env>
+
+ <env name="dev1server2" inherit="d1">
+   <var name="hostname" value="dev1server2" />
+ </env>
+
+ <!-- D2 -->
+ <env name="d2">
+  <var name="port.base" value="5" />
+ </env>
+
+ <env name="dev2server1" inherit="d2">
+  <var name="hostname" value="dev2server1" />
+  <var name="port" value="5002" />
+ </env>
+
+ <env name="dev2server2" inherit="d2">
+  <var name="hostname" value="dev2server1" />
+ </env>
+
+</config>

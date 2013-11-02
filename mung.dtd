@@ -1,0 +1,15 @@
+<!ELEMENT config    (global*, env*)>
+<!ATTLIST config    ldelim   CDATA  "{"
+                    rdelim   CDATA  "}">
+
+<!ELEMENT global    EMPTY>
+<!ATTLIST global    name     ID     #REQUIRED
+                    value    CDATA  #REQUIRED>
+
+<!ELEMENT env       (var*)>
+<!ATTLIST env       name     ID     #REQUIRED
+                    inherit  IDREF  #IMPLIED>
+
+<!ELEMENT var       EMPTY>
+<!ATTLIST var       name     IDREF  #REQUIRED
+                    value    CDATA  #REQUIRED>
